@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XQx-O0-Hsb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YatSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-Lg-sPd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ojX-HQ-Ew8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wAi-oQ-VkG"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxB-KZ-egP" customClass="LoadingView" customModule="YatSample" customModuleProvider="target">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3aO-Hs-4UK"/>
+                                    <constraint firstAttribute="height" constant="80" id="GHa-xL-UP8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wPF-Lg-sPd" secondAttribute="bottom" id="2Pd-C4-Dya"/>
+                            <constraint firstItem="HxB-KZ-egP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8r2-75-z10"/>
+                            <constraint firstItem="HxB-KZ-egP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NuU-oo-zJH"/>
+                            <constraint firstAttribute="trailing" secondItem="wPF-Lg-sPd" secondAttribute="trailing" id="cxb-KI-lxv"/>
+                            <constraint firstItem="wPF-Lg-sPd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d8T-WP-Qtp"/>
+                            <constraint firstItem="wPF-Lg-sPd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oRc-BM-nDf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Adr-UX-7Gb"/>
+                    <connections>
+                        <outlet property="loadingView" destination="HxB-KZ-egP" id="clU-jH-qp3"/>
+                        <outlet property="tableView" destination="wPF-Lg-sPd" id="nQv-Ni-6F4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="793"/>
+        </scene>
+        <!--Project View Controller-->
+        <scene sceneID="WNn-Pi-413">
+            <objects>
+                <viewController storyboardIdentifier="ProjectViewController" id="ZaP-l6-nZL" customClass="ProjectViewController" customModule="YatSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K8D-0Z-0pb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nOj-SL-RTf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gNM-kz-qKF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="z7z-c6-xkc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZaP-l6-nZL" id="Fhp-dI-kzp"/>
+                                    <outlet property="delegate" destination="ZaP-l6-nZL" id="fvq-wa-X7e"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcB-8q-Bnp" customClass="LoadingView" customModule="YatSample" customModuleProvider="target">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="gqQ-9q-qnv"/>
+                                    <constraint firstAttribute="width" constant="80" id="qpc-KK-phR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vcB-8q-Bnp" firstAttribute="centerX" secondItem="gNM-kz-qKF" secondAttribute="centerX" id="4Zf-t0-JRB"/>
+                            <constraint firstItem="vcB-8q-Bnp" firstAttribute="centerY" secondItem="gNM-kz-qKF" secondAttribute="centerY" id="JlH-3f-gQl"/>
+                            <constraint firstItem="z7z-c6-xkc" firstAttribute="top" secondItem="gNM-kz-qKF" secondAttribute="top" id="Sqq-kh-Y95"/>
+                            <constraint firstItem="z7z-c6-xkc" firstAttribute="leading" secondItem="gNM-kz-qKF" secondAttribute="leading" id="VO6-JF-bmc"/>
+                            <constraint firstAttribute="bottom" secondItem="z7z-c6-xkc" secondAttribute="bottom" id="X29-rj-4wY"/>
+                            <constraint firstAttribute="trailing" secondItem="z7z-c6-xkc" secondAttribute="trailing" id="mRI-ZC-Abg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="vcB-8q-Bnp" id="9pr-1q-k2M"/>
+                        <outlet property="tableView" destination="z7z-c6-xkc" id="JW2-4h-IQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3N-vP-ZUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926" y="799"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DSv-w6-S9A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQx-O0-Hsb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zOU-ix-eFp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bjg-rM-z1N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jW-Lz-SOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.80000000000001" y="792.95352323838085"/>
+        </scene>
+    </scenes>
+</document>
