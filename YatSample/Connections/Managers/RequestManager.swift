@@ -44,15 +44,24 @@ class RequestManager {
             return
          }
          
-         guard let json = self.processData(data) else {
-            let error = NSError(domain: "RequestManagerDomain", code: 500, description: "Error converting data to JSON")
-            completion(nil, error)
-            return
-         }
+         DispatchQueue.global().async {
          
-         self.responseFromJSON(request: self.request, json: json, completion: { (managerResponse, error) in
-            completion(managerResponse, error)
-         })
+            // Convert data to JSON
+            guard let json = self.processData(data) else {
+               let error = NSError(domain: "RequestManagerDomain", code: 500, description: "Error converting data to JSON")
+               DispatchQueue.main.async {
+                  completion(nil, error)
+               }
+               return
+            }
+            
+            // Process JSON
+            self.responseFromJSON(request: self.request, json: json, completion: { (managerResponse, error) in
+               DispatchQueue.main.async {
+                  completion(managerResponse, nil)
+               }
+            })
+         }
       }
    }
    
